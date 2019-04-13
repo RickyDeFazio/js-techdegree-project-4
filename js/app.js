@@ -1,5 +1,5 @@
 /* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
+ * Project 4 - OOP Game App (Game of Thrones Edition)
  * app.js */
 
 let game = null;
