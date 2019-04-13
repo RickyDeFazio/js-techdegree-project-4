@@ -8,8 +8,18 @@ class Phrase {
   }
 
   addPhraseToDisplay() {
-    
-  }
+    const ul = document.querySelector('#phrase ul');
+    for (let i = 0; i < this.phrase.length; i++) {
+      const li = document.createElement('li');
+      li.textContent = this.phrase[i];
+      ul.appendChild(li);
+      if (li.textContent === ' ') {
+        li.className = 'space';
+      } else {
+        li.className = `hide letter ${this.phrase[i]}`
+      }
+    }
+  };
 
   checkLetter(letter) {
     if (this.phrase.includes(letter)){
@@ -18,7 +28,4 @@ class Phrase {
     return false;
   }
 
-  showMatchedLetter() {
-
-  }
 }

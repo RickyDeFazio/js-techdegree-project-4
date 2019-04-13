@@ -18,5 +18,9 @@ class Game {
     const phraseArr = [phrase1, phrase2, phrase3, phrase4, phrase5];
     return phraseArr;
   }
-
+  
+  getRandomPhrase() {
+    const randomIndex =  Math.floor(Math.random() * this.phrases.length);
+    return this.phrases[randomIndex];
+  }
 }
