@@ -30,4 +30,8 @@ class Game {
     this.activePhrase = this.getRandomPhrase();
     return this.activePhrase.addPhraseToDisplay();
   }
+
+  handleInteraction() {
+    
+  }
 }
