@@ -28,7 +28,7 @@ class Game {
     const overlay = document.querySelector('#overlay');
     overlay.style.display = 'none';
     this.activePhrase = this.getRandomPhrase();
-    return this.activePhrase.addPhraseToDisplay();
+    this.activePhrase.addPhraseToDisplay();
   }
 
   handleInteraction() {

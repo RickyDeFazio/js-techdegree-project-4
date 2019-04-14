@@ -22,10 +22,19 @@ class Phrase {
   };
 
   checkLetter(letter) {
-    if (this.phrase.includes(letter)){
+    if (this.phrase.includes(letter)) {
       return true;
     }
     return false;
   }
 
+  showMatchedLetter(letter) {
+    const matchedLetters = document.querySelectorAll(`.${letter}`);
+    matchedLetters.forEach(letter => {
+      if (letter.classList.contains('hide')) {
+        letter.classList.remove('hide');
+        return letter.classList.add('show');
+      }
+    });
+  }
 }
