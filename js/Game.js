@@ -31,8 +31,8 @@ class Game {
     this.activePhrase.addPhraseToDisplay();
   }
 
-  handleInteraction() {
-    
+  handleInteraction(button) {
+    console.log(button)
   }
 
   checkForWin() {
@@ -56,15 +56,15 @@ class Game {
   gameOver(gameOver) {
     const gameEndingMsg = document.querySelector('#game-over-message');
     const overlay = document.getElementById('overlay');
+    overlay.classList.remove('start');
     if (gameOver === true) {
-      overlay.classList.remove('start');
       overlay.classList.add('win');
       gameEndingMsg.innerHTML = 'Congrats! You won!';
-      
+      overlay.classList.remove('lose');
     } else {
-      overlay.classList.remove('start');
       overlay.classList.add('lose');
       gameEndingMsg.innerHTML = 'Sorry, better luck next time!'
+      overlay.classList.remove('win');
     }
     overlay.style.display = 'flex';
   }

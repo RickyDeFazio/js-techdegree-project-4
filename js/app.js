@@ -9,3 +9,10 @@ btn_reset.addEventListener('click', () => {
   game = new Game();
   game.startGame();
 });
+
+const qwerty = document.getElementById('qwerty');
+qwerty.addEventListener('click', (e) => {
+  if (e.target.classList.contains('key')) {
+    game.handleInteraction(e.target);
+  }
+});
