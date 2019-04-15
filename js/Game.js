@@ -44,10 +44,28 @@ class Game {
   }
 
   removeLife() {
-
+    const scoreboardOl = document.querySelector('#scoreboard ol');
+    const scoreboardLi = scoreboardOl.children;
+    scoreboardLi[this.missed].firstChild.src = 'images/lostHeart.png';
+    this.missed++;
+    if (this.missed === 5) {
+      this.gameOver(false);
+    } 
   }
 
-  gameOver() {
-
+  gameOver(gameOver) {
+    const gameEndingMsg = document.querySelector('#game-over-message');
+    const overlay = document.getElementById('overlay');
+    if (gameOver === true) {
+      overlay.classList.remove('start');
+      overlay.classList.add('win');
+      gameEndingMsg.innerHTML = 'Congrats! You won!';
+      
+    } else {
+      overlay.classList.remove('start');
+      overlay.classList.add('lose');
+      gameEndingMsg.innerHTML = 'Sorry, better luck next time!'
+    }
+    overlay.style.display = 'flex';
   }
 }
