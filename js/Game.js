@@ -36,7 +36,11 @@ class Game {
   }
 
   checkForWin() {
-    
+    const hiddenLetters = document.querySelectorAll('.hide');
+    if (hiddenLetters.length === 0) {
+      return true;
+    }
+    return false;
   }
 
   removeLife() {
