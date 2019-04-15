@@ -34,4 +34,22 @@ class Game {
   handleInteraction() {
     
   }
+
+  checkForWin() {
+    const remainingLetters = document.querySelectorAll(`.${letter}`);
+    remainingLetters.forEach(letter => {
+      if (letter.classList.contains('hide')) {
+        return false;
+      }
+      return true;
+    });
+  }
+
+  removeLife() {
+
+  }
+
+  gameOver() {
+
+  }
 }
