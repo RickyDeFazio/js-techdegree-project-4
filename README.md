@@ -9,7 +9,7 @@
 
 
 ### Style changes: ###
-1. Backgrounds on start, during game, win, and lose screens are changed. 
-2. Color of text in some instanes are changed. 
-3. Font size on start has changed. 
-4. Color of selected letters on qwerty keys have changed.
+1. Added GoT background on start, during game, win, and lose screens. 
+2. Changed color of text in some instanes around the game. 
+3. Changed font size on start. 
+4. Changed color of selected letters on qwerty keys.
