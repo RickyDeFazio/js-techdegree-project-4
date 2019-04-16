@@ -7,6 +7,10 @@ class Phrase {
     this.phrase = phrase.toLowerCase();
   }
 
+  /**
+   * Displays and hides letters from phrase.
+   */
+
   addPhraseToDisplay() {
     const ul = document.querySelector('#phrase ul');
     for (let i = 0; i < this.phrase.length; i++) {
@@ -21,6 +25,11 @@ class Phrase {
     }
   };
 
+  /**
+   * Checks if chosen letter is in active phrase. Returns boolean value.
+   * @param {string} letter - letter chosen by player.
+   */
+
   checkLetter(letter) {
     if (this.phrase.includes(letter)) {
       return true;
@@ -28,12 +37,17 @@ class Phrase {
     return false;
   }
 
+/**
+ * If chosen letter is in the active phrase: show letter(s).
+ * @param {string} letter 
+ */
+
   showMatchedLetter(letter) {
     const matchedLetters = document.querySelectorAll(`.${letter}`);
     matchedLetters.forEach(letter => {
       if (letter.classList.contains('hide')) {
         letter.classList.remove('hide');
-        return letter.classList.add('show');
+        letter.classList.add('show');
       }
     });
   }
