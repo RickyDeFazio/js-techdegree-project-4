@@ -38,7 +38,7 @@ btn_reset.addEventListener('click', () => {
 });
 
 /**
- * Listens for clicks on qwerty keys and calls handleInteraction on event targeted button.
+ * Listens for clicks on the on-screen qwerty keys and calls handleInteraction on event targeted button.
  */
 
 qwerty.addEventListener('click', (e) => {
@@ -48,8 +48,18 @@ qwerty.addEventListener('click', (e) => {
   }
 });
 
+/**
+ * Listens for keyboard keys from player, allowing player to use keyboard to make guesses. If keyboard key matches one of the on-screen keys, call handleInteraction method.
+ */
+
 window.addEventListener('keydown', (e) => {
-  if (game.activePhrase.phrase.includes(e.key)){
-    console.log('sdflogjkhsdkfg')
+  for (let i = 0; i < keyrow.length; i++){
+    const childrenKeys = keyrow[i].children;
+    for (let i = 0; i < childrenKeys.length; i++){
+      if (e.key === childrenKeys[i].textContent){
+        game.handleInteraction(childrenKeys[i]);
+      }
+    }
   }
 });
+
