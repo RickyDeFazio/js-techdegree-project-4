@@ -10,6 +10,6 @@
 
 ### Style changes: ###
 1. Added GoT background on start, during game, win, and lose screens. 
-2. Changed color of text in some instanes around the game. 
+2. Changed color of text in some instances around the game. 
 3. Changed font size on start. 
 4. Changed color of selected letters on qwerty keys.
