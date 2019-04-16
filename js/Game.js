@@ -32,7 +32,9 @@ class Game {
   }
 
   handleInteraction(button) {
-    console.log(button)
+    if (this.activePhrase.checkLetter(button.textContent)){
+      this.activePhrase.showMatchedLetter(button.textContent);
+    }
   }
 
   checkForWin() {
