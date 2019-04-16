@@ -42,7 +42,14 @@ btn_reset.addEventListener('click', () => {
  */
 
 qwerty.addEventListener('click', (e) => {
+  console.log(e.target)
   if (e.target.classList.contains('key')) {
     game.handleInteraction(e.target);
+  }
+});
+
+window.addEventListener('keydown', (e) => {
+  if (game.activePhrase.phrase.includes(e.key)){
+    console.log('sdflogjkhsdkfg')
   }
 });
