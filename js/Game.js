@@ -5,24 +5,19 @@
 class Game {
   constructor() {
     this.missed = 0;
-    this.phrases = this.createPhrases();
+    this.phrases = [
+      new Phrase('Fear cuts deeper than swords'),
+      new Phrase('When you play a game of thones you win or you die'),
+      new Phrase('Most men would rather deny a hard truth than face it'),
+      new Phrase('Winter is coming'),
+      new Phrase('Nothing burns like the cold')
+    ];
     this.activePhrase = null;
   }
-
-  createPhrases() {
-    const phrase1 = new Phrase('Fear cuts deeper than swords');
-    const phrase2 = new Phrase('When you play a game of thones you win or you die');
-    const phrase3 = new Phrase('Most men would rather deny a hard truth than face it');
-    const phrase4 = new Phrase('Winter is coming');
-    const phrase5 = new Phrase('Nothing burns like the cold');
-    const phraseArr = [phrase1, phrase2, phrase3, phrase4, phrase5];
-    return phraseArr;
-  }
   
-  getRandomPhrase() {
-    const randomIndex =  Math.floor(Math.random() * this.phrases.length);
-    return this.phrases[randomIndex];
-  }
+  /**
+   * Hides the start screen overlay and assigns a random phrase to activePhrase.
+   */
 
   startGame() {
     const overlay = document.querySelector('#overlay');
@@ -30,6 +25,23 @@ class Game {
     this.activePhrase = this.getRandomPhrase();
     this.activePhrase.addPhraseToDisplay();
   }
+
+  /**
+   * When called, chooses a random phrase from phrase array.
+   * Returns random phrase object.
+   */
+
+  getRandomPhrase() {
+    const randomIndex =  Math.floor(Math.random() * this.phrases.length);
+    return this.phrases[randomIndex];
+  }
+
+  /**
+   * Disables selected letter's on screen.
+   * If phrase doesn't include guessed letter, display answer is wrong using 'wrong' color & remove life. 
+   * If guessed letter is in phrase, display answer is correct use 'correct' color & check if player has won.
+   * @param {element} button - the button that corresponds to the letter selected. 
+   */
 
   handleInteraction(button) {
     if (this.activePhrase.checkLetter(button.textContent)){
@@ -46,6 +58,11 @@ class Game {
     }
   }
 
+  /**
+   * Checks if player has selected all the possible hidden letters.
+   * Returns boolean value based on whether player has won or not.
+   */
+
   checkForWin() {
     const hiddenLetters = document.querySelectorAll('.hide');
     if (hiddenLetters.length === 0) {
@@ -53,6 +70,11 @@ class Game {
     }
     return false;
   }
+
+  /**
+   * Removes heart/life for each time a player guesses incorrectly.
+   * If player has missed 5 times, game ends & they lose.
+   */
 
   removeLife() {
     const scoreboardOl = document.querySelector('#scoreboard ol');
@@ -63,6 +85,11 @@ class Game {
       this.gameOver(false);
     } 
   }
+
+  /**
+   * Displays winning/losing message at end of game.
+   * @param {boolean} gameOver - false = lose, true = win.
+   */
 
   gameOver(gameOver) {
     const gameEndingMsg = document.querySelector('#game-over-message');
