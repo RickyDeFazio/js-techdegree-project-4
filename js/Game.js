@@ -34,6 +34,15 @@ class Game {
   handleInteraction(button) {
     if (this.activePhrase.checkLetter(button.textContent)){
       this.activePhrase.showMatchedLetter(button.textContent);
+      button.classList.add('chosen');
+      button.disabled = true;
+      if (this.checkForWin()) {
+        this.gameOver(this.checkForWin());
+      }
+    } else {
+      button.classList.add('wrong');
+      button.disabled = true;
+      this.removeLife();
     }
   }
 
