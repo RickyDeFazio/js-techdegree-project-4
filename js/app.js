@@ -4,9 +4,17 @@
 
 let game = null;
 const btn_reset = document.querySelector('#btn__reset');
-
 const qwerty = document.getElementById('qwerty');
 const keyrow = document.querySelectorAll('.keyrow');
+
+/**
+ * Resets board back to start:
+ * 1. Remove guessed letters from display. 
+ * 2. Remove 'guess' classes from keys.
+ * 3. Removes disabled attr.
+ * 4. Replaces faded hearts with starting hearts.
+ * 5. Starts new game.
+ */
 
 btn_reset.addEventListener('click', () => {
   const ul = document.querySelector('#phrase ul');
@@ -29,6 +37,9 @@ btn_reset.addEventListener('click', () => {
   game.startGame();
 });
 
+/**
+ * Listens for clicks on qwerty keys and calls handleInteraction on event targeted button.
+ */
 
 qwerty.addEventListener('click', (e) => {
   if (e.target.classList.contains('key')) {
