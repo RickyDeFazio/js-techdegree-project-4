@@ -7,10 +7,18 @@ class Game {
     this.missed = 0;
     this.phrases = [
       new Phrase('Fear cuts deeper than swords'),
-      new Phrase('When you play a game of thones you win or you die'),
-      new Phrase('Most men would rather deny a hard truth than face it'),
+      new Phrase('A Dragon is not a slave'),
+      new Phrase('Burn them all'),
       new Phrase('Winter is coming'),
-      new Phrase('Nothing burns like the cold')
+      new Phrase('Nothing burns like the cold'),
+      new Phrase('The Lannisters send their regards'),
+      new Phrase('You know nothing Jon Snow'),
+      new Phrase('You are no son of mine'),
+      new Phrase('This is not the day I die'),
+      new Phrase('I am the gift'),
+      new Phrase('He always comes back'),
+      new Phrase('For the watch'),
+      new Phrase('The Nights Watch')
     ];
     this.activePhrase = null;
   }
