@@ -1,4 +1,4 @@
-# Phrase Hunter Game ( Game of Thrones Edition ) #
+# Phrase Hunter ( Game of Thrones Edition ) #
 ### Rules: ###
 * The player’s goal is to guess all the letters in a hidden, random phrase. At the beginning, the player only sees the number of letters and words in the phrase, represented by blank boxes on the screen.
 * The player clicks an onscreen keyboard to guess letters in the phrase.
