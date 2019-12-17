@@ -7,7 +7,6 @@ class Game {
       new Phrase('Burn them all'),
       new Phrase('Winter is coming'),
       new Phrase('Nothing burns like the cold'),
-      new Phrase('The Lannisters send their regards'),
       new Phrase('You know nothing Jon Snow'),
       new Phrase('You are no son of mine'),
       new Phrase('This is not the day I die'),
