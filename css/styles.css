@@ -14,7 +14,7 @@
   --font-size-large: 60px;
   --font-size-medium: 20px;
   --transition: all .2s ease-in-out;
-  background-image: url('https://www.hbo.com/content/dam/hbodata/series/game-of-thrones/episodes/6/game-of-thrones-6-3000x1688.jpg/_jcr_content/renditions/cq5dam.web.1200.675.jpeg');
+  background-image: url('../images/gameOfThrones.jpeg.jpeg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -91,7 +91,9 @@ button {
 /* Title */
 
 .header {
-  color: #878a9b;
+  color: black;
+  font-size: 7em;
+  text-shadow: 2px 2px white;
 }
 
 
@@ -147,22 +149,19 @@ button {
   color: #FFFFFF;
 }
 
-.btn__reset {
+#btn__reset {
   padding: 16px;
   margin: 50px auto;
-  background: #f7a964;
   border-radius: 5px;
   font-size: 20px;
   cursor: pointer;
-  border-bottom: solid 4px rgba(0, 0, 0, .3);
-  border-right: solid 3px rgba(0, 0, 0, .3)
 }
 
-.btn__reset:active {
-  padding: 14px 16px 16px 14px;
-  border-bottom: solid 4px rgba(0, 0, 0, 0);
-  border-right: solid 3px rgba(0, 0, 0, 0);
+#btn__reset:hover {
+  background-color: black;
+  color: white;
 }
+
 
 
 /* Overlay */
@@ -181,16 +180,13 @@ button {
 }
 
 .title {
-  color: #FFF;
+  color: black;
   font-size: 7em;
-  color: #f8eecb;
+  text-shadow: 2px 2px white;
 }
 
 .start {
-  background-image: url('https://boygeniusreport.files.wordpress.com/2019/02/d0bd7hlw0aagvyc-cropped.jpg?quality=98&strip=all');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: linear-gradient(var(--color-neutral), black);
 }
 
 .start a {
@@ -206,10 +202,7 @@ button {
 }
 
 .lose {
-  background-image: url('https://mondrian.mashable.com/uploads%252Fstory%252Fthumbnail%252F92197%252F67c03045-eb50-4c9d-b521-78c9feee19a2.png%252F950x534.png?signature=wn-uQnwsZPbdpKahgwLr0GnaTOU=&source=https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: linear-gradient(red, black);
 }
 
 .lose a {
@@ -217,8 +210,5 @@ button {
 }
 
 #overlay.win {
-  background-image: url('https://cnet3.cbsistatic.com/img/J6WsvoDsr_5GZUfX6uYkbgRnl4U=/2019/03/04/3055d4ad-ad09-4924-9132-eb790c0633af/jonsnowonthronegot.jpg');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: linear-gradient(green, black);
 }
