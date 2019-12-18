@@ -2,18 +2,18 @@ class Game {
   constructor() {
     this.missed = 0;
     this.phrases = [
-      new Phrase('Fear cuts deeper than swords'),
       new Phrase('A Dragon is not a slave'),
       new Phrase('Burn them all'),
       new Phrase('Winter is coming'),
-      new Phrase('Nothing burns like the cold'),
       new Phrase('You know nothing Jon Snow'),
       new Phrase('You are no son of mine'),
       new Phrase('This is not the day I die'),
       new Phrase('I am the gift'),
       new Phrase('He always comes back'),
       new Phrase('For the watch'),
-      new Phrase('The Nights Watch')
+      new Phrase('The Nights Watch'),
+      new Phrase('My Queen'),
+      new Phrase('Lannisters pay their debt'),
     ];
     this.activePhrase = null;
   }
