@@ -4,16 +4,16 @@
 /* Variables */
 
 :root {
-  --color-win: #78CF82;
-  --color-lose: #D94545;
+  --color-win: #78cf82;
+  --color-lose: #d94545;
   --color-start: #5b85b7;
   --color-neutral: #445069;
-  --color-neutral-light: #D2D2D2;
-  --color-keys: #37474F;
-  --color-keys-light: #E5E5E5;
+  --color-neutral-light: #d2d2d2;
+  --color-keys: #37474f;
+  --color-keys-light: #e5e5e5;
   --font-size-large: 60px;
   --font-size-medium: 20px;
-  --transition: all .2s ease-in-out;
+  --transition: all 0.2s ease-in-out;
   background-image: url('../images/gameOfThrones.jpeg.jpeg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -34,7 +34,9 @@ body {
   height: 100vh;
 }
 
-li, ol, ul {
+li,
+ol,
+ul {
   padding: 0;
   display: inline-block;
 }
@@ -53,7 +55,7 @@ h1 {
 button {
   margin: 6px;
   border: 1px solid transparent;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   color: var(--color-keys);
   font-size: var(--font-size-medium);
   background-color: var(--color-keys-light);
@@ -65,8 +67,8 @@ button {
 }
 
 #btn__reset {
-	width: 200px;
-	margin: 0 auto;
+  width: 200px;
+  margin: 0 auto;
 }
 
 .main-container {
@@ -76,7 +78,6 @@ button {
   height: 100%;
   max-height: 900px;
   text-align: center;
-  
 }
 
 .section {
@@ -84,7 +85,7 @@ button {
   padding: 10px;
 }
 
-#phrase ul li{
+#phrase ul li {
   margin-top: 15px;
 }
 
@@ -95,7 +96,6 @@ button {
   font-size: 5rem;
   text-shadow: 2px 2px white;
 }
-
 
 /* Phrase */
 
@@ -114,7 +114,6 @@ button {
   width: 15px;
 }
 
-
 .show {
   color: #fff;
   background-color: #4ac0d5;
@@ -124,10 +123,9 @@ button {
   padding: 20px 1px 0 1px;
   margin-right: 2px;
   border-radius: 5px;
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
 }
-
 
 /* Keyboard */
 
@@ -140,12 +138,12 @@ button {
   background: #036619;
   border-radius: 5px;
   font-size: var(--font-size-medium);
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .wrong {
   background: #830404;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #btn__reset {
@@ -161,15 +159,13 @@ button {
   color: white;
 }
 
-
-
 /* Overlay */
 
 #overlay {
   display: flex;
   flex-direction: column;
   position: fixed;
-  color: #FFFFFF;
+  color: #ffffff;
   justify-content: center;
   top: 0;
   bottom: 0;
@@ -210,4 +206,14 @@ button {
 
 #overlay.win {
   background-image: linear-gradient(green, black);
+}
+
+#myVideo {
+  position: fixed;
+  opacity: 0.3;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
 }
