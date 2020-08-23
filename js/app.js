@@ -1,32 +1,32 @@
 let game = null;
-const btn_reset = document.querySelector('#btn__reset');
+const btnReset = document.querySelector('#btn__reset');
 const qwerty = document.getElementById('qwerty');
 const keyrow = document.querySelectorAll('.keyrow');
 
 /**
  * Resets board back to start:
- * 1. Remove guessed letters from display. 
+ * 1. Remove guessed letters from display.
  * 2. Remove 'guess' classes from keys.
  * 3. Removes disabled attr.
  * 4. Replaces faded hearts with starting hearts.
  * 5. Starts new game.
  */
 
-btn_reset.addEventListener('click', () => {
+btnReset.addEventListener('click', () => {
   const ul = document.querySelector('#phrase ul');
   while (ul.firstChild) {
     ul.removeChild(ul.firstChild);
   }
-  for (let i = 0; i < keyrow.length; i++){
+  for (let i = 0; i < keyrow.length; i++) {
     const childrenKeys = keyrow[i].children;
-    for (let i = 0; i < childrenKeys.length; i++){
+    for (let i = 0; i < childrenKeys.length; i++) {
       childrenKeys[i].className = 'key';
       childrenKeys[i].disabled = false;
     }
   }
   const scoreboardOl = document.querySelector('#scoreboard ol');
   const scoreboardLi = scoreboardOl.children;
-  for (let i = 0; i < scoreboardLi.length; i++){
+  for (let i = 0; i < scoreboardLi.length; i++) {
     scoreboardLi[i].firstChild.src = 'images/liveHeart.png';
   }
   game = new Game();
@@ -48,10 +48,10 @@ qwerty.addEventListener('click', (e) => {
  */
 
 window.addEventListener('keydown', (e) => {
-  for (let i = 0; i < keyrow.length; i++){
+  for (let i = 0; i < keyrow.length; i++) {
     const childrenKeys = keyrow[i].children;
-    for (let i = 0; i < childrenKeys.length; i++){
-      if (e.key === childrenKeys[i].textContent){
+    for (let i = 0; i < childrenKeys.length; i++) {
+      if (e.key === childrenKeys[i].textContent) {
         game.handleInteraction(childrenKeys[i]);
       }
     }
