@@ -2,6 +2,7 @@ let game = null;
 const btnReset = document.querySelector('#btn__reset');
 const qwerty = document.getElementById('qwerty');
 const keyrow = document.querySelectorAll('.keyrow');
+const video = document.getElementById('myVideo');
 
 /**
  * Resets board back to start:
@@ -13,6 +14,7 @@ const keyrow = document.querySelectorAll('.keyrow');
  */
 
 btnReset.addEventListener('click', () => {
+  video.muted = false;
   const ul = document.querySelector('#phrase ul');
   while (ul.firstChild) {
     ul.removeChild(ul.firstChild);
