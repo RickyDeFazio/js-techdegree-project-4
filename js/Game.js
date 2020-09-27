@@ -17,11 +17,10 @@ class Game {
     ];
     this.activePhrase = null;
   }
-  
+
   /**
    * Hides the start screen overlay and assigns a random phrase to activePhrase.
    */
-
   startGame() {
     const overlay = document.querySelector('#overlay');
     overlay.style.display = 'none';
@@ -33,7 +32,6 @@ class Game {
    * When called, chooses a random phrase from phrase array.
    * Returns random phrase object.
    */
-
   getRandomPhrase() {
     const randomIndex =  Math.floor(Math.random() * this.phrases.length);
     return this.phrases[randomIndex];
@@ -41,11 +39,10 @@ class Game {
 
   /**
    * Disables selected letter's on screen.
-   * If phrase doesn't include guessed letter, display answer is wrong using 'wrong' color & remove life. 
+   * If phrase doesn't include guessed letter, display answer is wrong using 'wrong' color & remove life.
    * If guessed letter is in phrase, display answer is correct use 'correct' color & check if player has won.
-   * @param {element} button - the button that corresponds to the letter selected. 
+   * @param {element} button - the button that corresponds to the letter selected.
    */
-
   handleInteraction(button) {
     if (this.activePhrase.checkLetter(button.textContent)){
       this.activePhrase.showMatchedLetter(button.textContent);
@@ -65,7 +62,6 @@ class Game {
    * Checks if player has selected all the possible hidden letters.
    * Returns boolean value based on whether player has won or not.
    */
-
   checkForWin() {
     const hiddenLetters = document.querySelectorAll('.hide');
     if (hiddenLetters.length === 0) {
@@ -78,22 +74,21 @@ class Game {
    * Removes heart/life for each time a player guesses incorrectly.
    * If player has missed 5 times, game ends & they lose.
    */
-
   removeLife() {
-    const scoreboardOl = document.querySelector('#scoreboard ol');
-    const scoreboardLi = scoreboardOl.children;
-    scoreboardLi[this.missed].firstChild.src = 'images/lostHeart.png';
-    this.missed++;
     if (this.missed === 5) {
       this.gameOver(false);
-    } 
+    } else {
+      const scoreboardOl = document.querySelector('#scoreboard ol');
+      const scoreboardLi = scoreboardOl.children;
+      scoreboardLi[this.missed].firstChild.src = 'images/lostHeart.png';
+      this.missed++;
+    }
   }
 
   /**
    * Displays winning/losing message at end of game.
    * @param {boolean} gameOver - false = lose, true = win.
    */
-
   gameOver(gameOver) {
     const gameEndingMsg = document.querySelector('#game-over-message');
     const overlay = document.getElementById('overlay');
