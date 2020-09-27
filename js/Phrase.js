@@ -6,26 +6,25 @@ class Phrase {
   /**
    * Displays and hides letters from phrase.
    */
-
   addPhraseToDisplay() {
     const ul = document.querySelector('#phrase ul');
-    for (let i = 0; i < this.phrase.length; i++) {
+
+    Array.from(this.phrase).forEach(letter => {
       const li = document.createElement('li');
-      li.textContent = this.phrase[i];
+      li.textContent = letter;
       ul.appendChild(li);
       if (li.textContent === ' ') {
         li.className = 'space';
       } else {
-        li.className = `hide letter ${this.phrase[i]}`
+        li.className = `hide letter ${letter}`;
       }
-    }
+    })
   };
 
   /**
    * Checks if chosen letter is in active phrase. Returns boolean value.
    * @param {string} letter - letter chosen by player.
    */
-
   checkLetter(letter) {
     if (this.phrase.includes(letter)) {
       return true;
@@ -33,11 +32,10 @@ class Phrase {
     return false;
   }
 
-/**
- * If chosen letter is in the active phrase: show letter(s).
- * @param {string} letter 
- */
-
+  /**
+   * If chosen letter is in the active phrase: show letter(s).
+   * @param {string} letter
+   */
   showMatchedLetter(letter) {
     const matchedLetters = document.querySelectorAll(`.${letter}`);
     matchedLetters.forEach(letter => {
