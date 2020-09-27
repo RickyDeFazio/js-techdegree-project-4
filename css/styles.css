@@ -106,13 +106,17 @@ button {
   width: 65px;
   padding: 20px 1px 0 1px;
   margin-right: 2px;
-  color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
 }
 
 .space {
   width: 15px;
+}
+
+.hide {
+  color: transparent;
+  pointer-events: none;
 }
 
 .show {
