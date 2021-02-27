@@ -33,7 +33,7 @@ class Game {
    * Returns random phrase object.
    */
   getRandomPhrase() {
-    const randomIndex =  Math.floor(Math.random() * this.phrases.length);
+    const randomIndex = Math.floor(Math.random() * this.phrases.length);
     return this.phrases[randomIndex];
   }
 
@@ -44,7 +44,7 @@ class Game {
    * @param {element} button - the button that corresponds to the letter selected.
    */
   handleInteraction(button) {
-    if (this.activePhrase.checkLetter(button.textContent)){
+    if (this.activePhrase.checkLetter(button.textContent)) {
       this.activePhrase.showMatchedLetter(button.textContent);
       button.classList.add('chosen');
       button.disabled = true;
@@ -75,13 +75,12 @@ class Game {
    * If player has missed 5 times, game ends & they lose.
    */
   removeLife() {
+    this.missed++;
+    const scoreboardOl = document.querySelector('#scoreboard ol');
+    const scoreboardLi = scoreboardOl.children;
+    scoreboardLi[this.missed - 1].firstChild.src = 'images/lostHeart.png';
     if (this.missed === 5) {
       this.gameOver(false);
-    } else {
-      const scoreboardOl = document.querySelector('#scoreboard ol');
-      const scoreboardLi = scoreboardOl.children;
-      scoreboardLi[this.missed].firstChild.src = 'images/lostHeart.png';
-      this.missed++;
     }
   }
 
